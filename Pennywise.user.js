@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         Pennywise
-// @namespace  hardy.pennywise
+// @namespace  sykoe.pennywise
 // @version      2.0
 // @description  Records your transactions
 // @author       Hardy[2131687]
