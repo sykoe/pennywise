@@ -1,9 +1,9 @@
 // ==UserScript==
-// @name         Pennywise
+// @name         Pennywise forked
 // @namespace  sykoe.pennywise
 // @version      2.0
 // @description  Records your transactions
-// @author       Hardy[2131687]
+// @author       forked_from_Hardy[2131687]
 // @match        https://www.torn.com/*
 // @grant        GM_setValue
 // @grant        GM_getValue
