@@ -45,7 +45,7 @@ function bazaar(args) {
 	lock.tryLock(4*60*1000);
 	ss.insertRowAfter(1);
 	var data = JSON.parse(args)["pennywise"];
-	ss.getRange(2, 1, 1, 6).setValues([[getTime(), data.itemName, data.amount, data.beforeval, data.price, '=HYPERLINK("https://www.torn.com/profiles.php?XID='+data.userID+'", "'+data.userName+'")']]);
+	ss.getRange(2, 1, 1, 6).setValues([[getTime(), data.itemName, data.amount, data.beforeval, data.price, '=HYPERLINK("https://www.torn.com/profiles.php?XID='+data.userID+'"; "'+data.userName+'")']]);
 	lock.releaseLock()
 }
 
