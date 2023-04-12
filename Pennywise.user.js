@@ -126,26 +126,38 @@
 		node.style.display = "none";
 	});
 
-	//This function is to get the name of country from where you buy stuff from.
-	function getcountry() {
-		var penny_country_array = ["Mexico",
-			"Switzerland",
-			"UAE",
-			"Cayman Islands",
-			"Canada",
-			"Hawaii",
-			"United Kingdom",
-			"Argentina",
-			"Japan",
-			"China",
-			"South Africa"];
-		var penny_country = document.getElementsByClassName('msg right-round')[1].childNodes[1].childNodes[0].data;
-		if (penny_country_array.indexOf(penny_country) !== -1) {
-			var penny_return = penny_country;
-		}
-		return penny_return;
-	}
-
+            //This function is to get the name of country from where you buy stuff from.
+            function getcountry() {
+        	var penny_country_array = ["Mexico",
+        				   "Switzerland",
+        				   "UAE",
+        				   "Cayman Islands",
+        				   "Canada",
+        				   "Hawaii",
+        				   "United Kingdom",
+        				   "Argentina",
+        				   "Japan",
+        				   "China",
+        				   "South Africa"];
+        
+        	//i'm sure there is a better way to include local shop buys, but this worked for me
+        	try {
+        	    var penny_country_by_element = document.getElementsByClassName('msg right-round')[1].childNodes[1].childNodes[0].data;
+        	} catch (e){}
+        	try {
+        	    var penny_shop_by_h4 = document.getElementsByTagName('h4')[0].textContent.split('\n')[1];
+        	} catch (e) {}
+        	if(typeof penny_country_by_element === 'undefined'){
+        	    var penny_return = penny_shop_by_h4
+        	    }else{
+        		var penny_country = penny_country_by_element;
+        		if (penny_country_array.indexOf(penny_country) !== -1) {
+        		    var penny_return = penny_country;
+        		}
+        	    }
+        	return penny_return;
+            }
+        
 	//Bazaar log. Because Ched changed the way Bazaar Requests work. They now use Fetch 
 	let original_fetch = unsafeWindow.fetch;
 	unsafeWindow.fetch = async (input, init) => {
