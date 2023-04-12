@@ -125,7 +125,7 @@
         node.style.display = "none";
     });
 
-    //This function is to get the name of country from where you buy stuff from.
+    //This function is to get the name of country or if in Torn also the shops name from where you buy stuff from.
     function getcountry() {
         var penny_country_array = ["Mexico",
             "Switzerland",
@@ -139,14 +139,14 @@
             "China",
             "South Africa"
         ];
-		
+
         var penny_shop_by_h4 = document.getElementsByTagName('h4')[0].textContent.split('\n')[1];
 
         if (penny_country_array.indexOf(penny_shop_by_h4) !== -1) {
             var penny_return = penny_shop_by_h4;
         } else {
-			var penny_return = 'Torn:' + penny_shop_by_h4;
-		}
+            var penny_return = 'Torn:' + penny_shop_by_h4;
+        }
 
         return penny_return;
     }
